@@ -1,0 +1,4 @@
+Name: "Hello World"
+Title: "Print 'Hello, World!'"
+Description: "Prints 'Hello, World!' to the console."
+Binding: hello
