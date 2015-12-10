@@ -11,6 +11,9 @@ three functions are created.
 
 The associated registration metadata is contained within
 [inst/rstudio/addins.dcf](https://github.com/rstudio/rstudioaddins/blob/master/inst/rstudio/addins.dcf).
-RStudio will automatically discover these files when it is launched, and
-register them so that they can be invoked through keyboard shortcuts and other
-UI gestures.
+
+When RStudio is launched, it will automatically discover addins registered by R
+packages, and register them so that they can be invoked through keyboard
+shortcuts and other UI gestures. See [this support
+article](https://support.rstudio.com/hc/en-us/articles/215605467) for more
+details.
