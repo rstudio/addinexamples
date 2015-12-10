@@ -1,8 +1,9 @@
 Package: rstudioaddins
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.0)
-License: What license is it under?
+Title: RStudio Addins
+Version: 0.1.0
+Authors@R: person("Kevin", "Ushey", email = "kevin@rstudio.com", role = c("aut", "cre"))
+Description: Provides a set of RStudio addins -- R functions that can be
+    bound to keyboard shortcuts, and called through different UI gestures.
+Depends: R (>= 3.0.0)
+License: MIT + file LICENSE
 LazyData: true
