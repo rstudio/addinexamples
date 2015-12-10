@@ -2,8 +2,12 @@ Package: rstudioaddins
 Title: RStudio Addins
 Version: 0.1.0
 Authors@R: person("Kevin", "Ushey", email = "kevin@rstudio.com", role = c("aut", "cre"))
-Description: Provides a set of RStudio addins -- R functions that can be
+Description: Provides an example set of RStudio addins -- R functions that can be
     bound to keyboard shortcuts, and called through different UI gestures.
-Depends: R (>= 3.0.0)
+Depends:
+    R (>= 3.0.0)
+Suggests:
+    rstudioapi
 License: MIT + file LICENSE
 LazyData: true
+RoxygenNote: 5.0.1
