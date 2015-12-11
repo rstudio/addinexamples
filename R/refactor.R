@@ -86,6 +86,7 @@ refactor <- function() {
     before <- context$contents
     after  <- context$contents
 
+
     output$before <- renderCode({
       before
     })

@@ -7,7 +7,7 @@ authors can create and expose their own addins.
 
 Addins are just R functions with a bit of special registration metadata. Within
 [R/addins.R](https://github.com/rstudio/rstudioaddins/blob/master/R/addins.R),
-three functions are created. The associated registration metadata is contained
+a couple of functions are defined. The associated registration metadata is contained
 within
 [inst/rstudio/addins.dcf](https://github.com/rstudio/rstudioaddins/blob/master/inst/rstudio/addins.dcf).
 

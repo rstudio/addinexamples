@@ -10,7 +10,7 @@ Imports:
     shiny,
     shinygadgets
 Suggests:
-    rstudioapi,
+    rstudioapi
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1
