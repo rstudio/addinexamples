@@ -7,6 +7,7 @@
 refactor()
 }
 \description{
-Replace occurrences of text within the current document open in RStudio.
+Call this as an addin to replace occurrences of a particular sequence of character
+in a document with a new sequence of characters.
 }
 

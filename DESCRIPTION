@@ -8,8 +8,7 @@ Depends:
     R (>= 3.0.0)
 Imports:
     shiny,
-    shinygadgets
-Suggests:
+    shinygadgets,
     rstudioapi
 License: MIT + file LICENSE
 LazyData: true

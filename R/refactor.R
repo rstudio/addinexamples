@@ -34,6 +34,7 @@ rCodeContainer <- function(...) {
 }
 
 renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
+  func <- NULL
   installExprFunction(expr, "func", env, quoted)
   markRenderFunction(textOutput, function() {
     paste(func(), collapse = "\n")
@@ -42,7 +43,8 @@ renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
 
 #' Rename Words in a Document
 #'
-#' Replace occurrences of text within the current document open in RStudio.
+#' Call this as an addin to replace occurrences of a particular sequence of character
+#' in a document with a new sequence of characters.
 #'
 #' @export
 refactor <- function() {

@@ -1,3 +1,5 @@
+_NOTE: RStudio addins are not yet part of a released version of RStudio. Stay tuned!_
+
 RStudio Addins
 ==============
 
