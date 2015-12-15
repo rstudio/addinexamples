@@ -123,6 +123,3 @@ performRefactor <- function(contents, from, to, useWordBoundaries = TRUE) {
     gsub(reFrom, reTo, x, perl = TRUE)
   }))
 }
-
-options(shiny.trace = FALSE)
-refactor()
