@@ -2,8 +2,10 @@ Name: Insert %in%
 Title: Insert %in%
 Description: Inserts `%in%` at the cursor position.
 Binding: insert_in
+Interactive: false
 
 Name: Refactor
 Title: Rename tokens in a document.
 Description: Rename tokens within a document.
 Binding: refactor
+Interactive: true

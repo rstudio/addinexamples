@@ -30,7 +30,8 @@ highlightCode <- function(session, id) {
 }
 
 rCodeContainer <- function(...) {
-  with(tags, div(pre(code(class = "language-r", style = "margin-left: -156px;", ...))))
+  code <- as.character(tags$code(class = "language-r", ...))
+  div(pre(code))
 }
 
 renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
@@ -49,37 +50,23 @@ renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
 #' @export
 refactor <- function() {
 
- ui <- gadgetPage(
+  ui <- gadgetPage(
 
-   includeHighlightJs(),
-   titlebar("Refactor Code"),
-
-   div(
-     style = "margin: 10px;",
-     verticalLayout(
-       checkboxInput("boundaries", "Use Word Boundaries?", value = TRUE),
-       tags$table(
-         width = "100%",
-         tags$tr(
-           tags$td(
-             textInput("from", "From: ")
-           ),
-           tags$td(
-             textInput("to", "To: ")
-           )
-         ),
-         tags$tr(
-           tags$td(
-             uiOutput("before", container = rCodeContainer)
-           ),
-           tags$td(
-             uiOutput("after", container = rCodeContainer)
-           )
-         )
-       )
-     )
-   )
- )
+    includeHighlightJs(),
+    titlebar("Refactor Code"),
+    contentPanel(scrollPanel(
+      h4("Replace the text 'from' with the text 'to'."),
+      checkboxInput("boundaries", "Use Word Boundaries?", value = TRUE),
+      fixedRow(
+        column(6, textInput("from", "From: ")),
+        column(6, textInput("to", "To: "))
+      ),
+      fixedRow(
+        column(6, uiOutput("before", container = rCodeContainer)),
+        column(6, uiOutput("after", container = rCodeContainer))
+      )
+    ))
+  )
 
   server <- function(input, output, session) {
 
@@ -136,3 +123,6 @@ performRefactor <- function(contents, from, to, useWordBoundaries = TRUE) {
     gsub(reFrom, reTo, x, perl = TRUE)
   }))
 }
+
+options(shiny.trace = FALSE)
+refactor()
