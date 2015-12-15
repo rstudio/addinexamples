@@ -10,6 +10,8 @@ Imports:
     shiny,
     shinygadgets,
     rstudioapi
+Suggests:
+    formatR
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1

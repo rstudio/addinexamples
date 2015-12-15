@@ -9,3 +9,9 @@ Title: Rename tokens in a document.
 Description: Rename tokens within a document.
 Binding: refactor
 Interactive: true
+
+Name: Reformat
+Title: Reformat a document.
+Description: Reformat a document using 'formatR::tidy_source()'.
+Binding: reformat
+Interactive: true
