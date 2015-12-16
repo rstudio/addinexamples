@@ -4,7 +4,7 @@
 #' See \code{\link{refactor}()} and \code{\link{insert_in}()} for two examples
 #' of R functions that are exported.
 #'
-#' @name rstudioaddins
+#' @name addinexamples
 #' @docType package
 #' @import shiny shinygadgets rstudioapi
 NULL

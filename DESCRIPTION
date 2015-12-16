@@ -1,4 +1,4 @@
-Package: rstudioaddins
+Package: addinexamples
 Title: RStudio Addins
 Version: 0.1.0
 Authors@R: person("Kevin", "Ushey", email = "kevin@rstudio.com", role = c("aut", "cre"))

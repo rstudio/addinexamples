@@ -21,7 +21,7 @@ if (!requireNamespace("devtools", quietly = TRUE))
 
 devtools::install_github("rstudio/shiny")
 devtools::install_github("rstudio/shinygadgets")
-devtools::install_github("rstudio/rstudioaddins")
+devtools::install_github("rstudio/addinexamples")
 ```
 
 What's an Addin?
@@ -29,12 +29,12 @@ What's an Addin?
 
 Addins are just R functions with a bit of special registration metadata. This
 package exports two simple addins: one function,
-[insert_in](https://github.com/rstudio/rstudioaddins/blob/master/R/insert-in.R),
+[insert_in](https://github.com/rstudio/addinexamples/blob/master/R/insert-in.R),
 can be used to insert ' %in% ' at the cursor position. Another,
-[refactor](https://github.com/rstudio/rstudioaddins/blob/master/R/refactor.R),
+[refactor](https://github.com/rstudio/addinexamples/blob/master/R/refactor.R),
 can be used to interactively refactor code in a document, using a Shiny application.
 These addins are registered through a Debian Control File, located at
-[inst/rstudio/addins.dcf](https://github.com/rstudio/rstudioaddins/blob/master/inst/rstudio/addins.dcf).
+[inst/rstudio/addins.dcf](https://github.com/rstudio/addinexamples/blob/master/inst/rstudio/addins.dcf).
 
 When RStudio is launched, it will automatically discover addins registered by
 installed R packages, and register them so that they can be invoked through
