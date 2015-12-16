@@ -38,3 +38,10 @@ renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
     paste(func(), collapse = "\n")
   })
 }
+
+stableTwoColumnLayout <- function(lhs, rhs) {
+  div(class = "row",
+    div(class = "col-xs-6 col-md-6", lhs),
+    div(class = "col-xs-6 col-md-6", rhs)
+  )
+}

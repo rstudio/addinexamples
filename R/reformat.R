@@ -55,6 +55,6 @@ reformat <- function() {
 
   }
 
-  runGadget(ui, server)
+  runGadget(ui, server, viewer = dialogViewer("Reformat"))
 
 }
