@@ -7,15 +7,14 @@ reformat <- function() {
     includeHighlightJs(),
     titlebar("Reformat Code"),
     contentPanel(scrollPanel(
-      h4("Use ", formatRLink, " to reformat code"),
-      verticalLayout(
+      h4("Use ", formatRLink, " to reformat code."),
+      hr(),
+      stableColumnLayout(
         checkboxInput("brace.newline", "Place left braces '{' on a new line?", FALSE),
-        numericInput("indent", "Indent size: ", 2)
+        numericInput("indent", "Indent size: ", 2),
+        numericInput("width", "Column width: ", 60)
       ),
-      fixedRow(
-        column(6, uiOutput("before", container = rCodeContainer)),
-        column(6, uiOutput("after", container = rCodeContainer))
-      )
+      uiOutput("document", container = rCodeContainer)
     ))
   )
 
@@ -23,33 +22,35 @@ reformat <- function() {
 
     # Get the document context.
     context <- rstudioapi::getActiveDocumentContext()
-    before <- context$contents
-    after  <- context$contents
 
-    # Get the formatR options.
-    output$before <- renderCode({
-      before
+    reactiveDocument <- reactive({
+
+      # Collect inputs
+      brace.newline <- input$brace.newline
+      indent <- input$indent
+      width <- input$width
+
+      # Build formatted document
+      formatted <- formatR::tidy_source(
+        text = context$contents,
+        output = FALSE,
+        width.cutoff = width,
+        indent = indent,
+        brace.newline = brace.newline
+      )$text.tidy
+
+      formatted
     })
 
-    output$after <- renderCode({
-
-      highlightCode(session, "before")
-      highlightCode(session, "after")
-
-      formatted <- formatR::tidy_source(
-        text = before,
-        output = FALSE,
-        width.cutoff = 500,
-        indent = input$indent,
-        brace.newline = input$brace.newline
-      )
-
-      after <<- paste(formatted$text.tidy, collapse = "\n")
-
+    output$document <- renderCode({
+      document <- reactiveDocument()
+      highlightCode(session, "document")
+      document
     })
 
     observeEvent(input$done, {
-      rstudioapi::setDocumentContents(after)
+      contents <- paste(reactiveDocument(), collapse = "\n")
+      rstudioapi::setDocumentContents(contents, id = )
       invisible(stopApp())
     })
 

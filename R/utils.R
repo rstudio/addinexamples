@@ -39,9 +39,14 @@ renderCode <- function(expr, env = parent.frame(), quoted = FALSE) {
   })
 }
 
-stableTwoColumnLayout <- function(lhs, rhs) {
-  div(class = "row",
-    div(class = "col-xs-6 col-md-6", lhs),
-    div(class = "col-xs-6 col-md-6", rhs)
+stableColumnLayout <- function(...) {
+  dots <- list(...)
+  n <- length(dots)
+  width <- 12 / n
+  class <- sprintf("col-xs-%s col-md-%s", width, width)
+  fluidRow(
+    lapply(dots, function(el) {
+      div(class = class, el)
+    })
   )
 }

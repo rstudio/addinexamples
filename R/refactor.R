@@ -12,11 +12,12 @@ refactor <- function() {
     titlebar("Refactor Code"),
     contentPanel(scrollPanel(
       h4("Replace the text 'from' with the text 'to'."),
-      stableTwoColumnLayout(
+      hr(),
+      stableColumnLayout(
         checkboxInput("boundaries", "Use Word Boundaries?", value = TRUE),
         uiOutput("changes")
       ),
-      stableTwoColumnLayout(
+      stableColumnLayout(
         textInput("from", "From:"),
         textInput("to", "To:")
       ),
@@ -29,7 +30,7 @@ refactor <- function() {
     context <- rstudioapi::getActiveDocumentContext()
     original <- context$contents
 
-    refactored <- reactive({
+    reactiveRefactor <- reactive({
 
       from <- input$from
       to <- input$to
@@ -44,30 +45,31 @@ refactor <- function() {
     })
 
     output$changes <- renderUI({
-      spec <- refactored()
+      spec <- reactiveRefactor()
       if (spec$changes == 0)
-        return(NULL)
+        return(div("No changes to be made."))
 
       instances <- if (spec$changes == 1) "instance" else "instances"
       div(paste(spec$changes, instances, "will be replaced."))
     })
 
     output$document <- renderCode({
-      spec <- refactored()
+      spec <- reactiveRefactor()
       highlightCode(session, "document")
       paste(spec$refactored, collapse = "\n")
     })
 
     observeEvent(input$done, {
-      spec <- refactored()
+      spec <- reactiveRefactor()
       transformed <- paste(spec$refactored, collapse = "\n")
-      rstudioapi::setDocumentContents(transformed)
+      rstudioapi::setDocumentContents(transformed, id = context$id)
       invisible(stopApp())
     })
 
   }
 
-  runGadget(ui, server, viewer = dialogViewer("Refactor"))
+  viewer <- dialogViewer("Refactor", width = 1000, height = 800)
+  runGadget(ui, server, viewer = viewer)
 }
 
 performRefactor <- function(contents, from, to, useWordBoundaries = TRUE) {
