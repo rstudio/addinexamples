@@ -56,6 +56,7 @@ reformat <- function() {
 
   }
 
-  runGadget(ui, server, viewer = dialogViewer("Reformat"))
+  viewer <- dialogViewer("Find and Replace", width = 1000, height = 800)
+  runGadget(ui, server, viewer = viewer)
 
 }

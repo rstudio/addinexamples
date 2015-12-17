@@ -1,10 +1,10 @@
-#' Rename Words in a Document
+#' Find and Replace Tokens in a Document
 #'
 #' Call this as an addin to replace occurrences of a particular sequence of
 #' characters in a document with a new sequence of characters.
 #'
 #' @export
-refactor <- function() {
+replace <- function() {
 
   ui <- gadgetPage(
 

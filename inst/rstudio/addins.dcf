@@ -3,12 +3,12 @@ Description: Inserts `%in%` at the cursor position.
 Binding: insert_in
 Interactive: false
 
-Name: Refactor
+Name: Find and Replace
 Description: Rename tokens within a document.
-Binding: refactor
+Binding: replace
 Interactive: true
 
-Name: Reformat
+Name: Reformat R Code
 Description: Reformat a document using 'formatR::tidy_source()'.
 Binding: reformat
 Interactive: true
