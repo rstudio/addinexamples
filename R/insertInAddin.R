@@ -3,6 +3,6 @@
 #' Call this function as an addin to insert \code{ \%in\% } at the cursor position.
 #'
 #' @export
-insertAddin <- function() {
+insertInAddin <- function() {
   rstudioapi::insertText(" %in% ")
 }
