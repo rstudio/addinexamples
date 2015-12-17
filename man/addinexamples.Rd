@@ -7,7 +7,7 @@
 \title{RStudio Addins}
 \description{
 Use RStudio addins to execute \R functions interactively within RStudio.
-See \code{\link{refactor}()} and \code{\link{insert_in}()} for two examples
-of R functions that are exported.
+See \code{\link{findAndReplaceAddin}()} and \code{\link{insertInAddin}()}
+for two examples of R functions that are exported.
 }
 
