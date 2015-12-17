@@ -50,3 +50,14 @@ stableColumnLayout <- function(...) {
     })
   )
 }
+
+isErrorMessage <- function(object) {
+  inherits(object, "error_message")
+}
+
+errorMessage <- function(type, message) {
+  structure(
+    list(type = type, message = message),
+    class = "error_message"
+  )
+}

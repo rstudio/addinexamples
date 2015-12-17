@@ -1,19 +1,19 @@
 Name: Insert %in%
 Description: Inserts `%in%` at the cursor position.
-Binding: insert_in
+Binding: insertInAddin
 Interactive: false
 
 Name: Find and Replace
 Description: Find and replace words in a document.
-Binding: replace
+Binding: findAndReplaceAddin
 Interactive: true
 
 Name: Reformat R Code
 Description: Reformat R code using 'formatR::tidy_source()'.
-Binding: reformat
+Binding: reformatAddin
 Interactive: true
 
 Name: Subset a Data Frame
 Description: Interactively subset a data frame.
-Binding: subsetter
+Binding: subsetAddin
 Interactive: true

@@ -1,5 +1,5 @@
 #' Reformat a block of code using formatR.
-reformat <- function() {
+reformatAddin <- function() {
 
   formatRLink <- tags$a(href = "http://yihui.name/formatR/", "formatR")
 
@@ -50,7 +50,7 @@ reformat <- function() {
 
     observeEvent(input$done, {
       contents <- paste(reactiveDocument(), collapse = "\n")
-      rstudioapi::setDocumentContents(contents, id = )
+      rstudioapi::setDocumentContents(contents, id = context$id)
       invisible(stopApp())
     })
 

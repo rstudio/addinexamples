@@ -4,7 +4,7 @@
 #' characters in a document with a new sequence of characters.
 #'
 #' @export
-replace <- function() {
+findAndReplaceAddin <- function() {
 
   ui <- gadgetPage(
 
