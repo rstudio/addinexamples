@@ -4,11 +4,11 @@ Binding: insert_in
 Interactive: false
 
 Name: Find and Replace
-Description: Rename tokens within a document.
+Description: Find and replace words in a document.
 Binding: replace
 Interactive: true
 
 Name: Reformat R Code
-Description: Reformat a document using 'formatR::tidy_source()'.
+Description: Reformat R code using 'formatR::tidy_source()'.
 Binding: reformat
 Interactive: true
