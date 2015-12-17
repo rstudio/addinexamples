@@ -9,7 +9,7 @@ replace <- function() {
   ui <- gadgetPage(
 
     includeHighlightJs(),
-    titlebar("Refactor Code"),
+    titlebar("Find and Replace"),
     contentPanel(scrollPanel(
       h4("Replace the text 'from' with the text 'to'."),
       hr(),
@@ -68,7 +68,7 @@ replace <- function() {
 
   }
 
-  viewer <- dialogViewer("Refactor", width = 1000, height = 800)
+  viewer <- dialogViewer("Find and Replace", width = 1000, height = 800)
   runGadget(ui, server, viewer = viewer)
 }
 
