@@ -12,3 +12,8 @@ Name: Reformat R Code
 Description: Reformat R code using 'formatR::tidy_source()'.
 Binding: reformat
 Interactive: true
+
+Name: Subset a Data Frame
+Description: Interactively subset a data frame.
+Binding: subsetter
+Interactive: true

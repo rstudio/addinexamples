@@ -2,6 +2,7 @@
 
 export(insert_in)
 export(replace)
+export(subsetter)
 import(rstudioapi)
 import(shiny)
 import(shinygadgets)
