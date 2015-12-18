@@ -6,7 +6,7 @@ reformatAddin <- function() {
   ui <- gadgetPage(
     includeHighlightJs(),
     titlebar("Reformat Code"),
-    contentPanel(scrollPanel(
+    contentPanel(
       h4("Use ", formatRLink, " to reformat code."),
       hr(),
       stableColumnLayout(
@@ -15,7 +15,7 @@ reformatAddin <- function() {
         numericInput("width", "Column width: ", 60)
       ),
       uiOutput("document", container = rCodeContainer)
-    ))
+    )
   )
 
   server <- function(input, output, session) {

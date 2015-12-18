@@ -10,7 +10,7 @@ findAndReplaceAddin <- function() {
 
     includeHighlightJs(),
     titlebar("Find and Replace"),
-    contentPanel(scrollPanel(
+    contentPanel(
       h4("Replace the text 'from' with the text 'to'."),
       hr(),
       stableColumnLayout(
@@ -22,7 +22,7 @@ findAndReplaceAddin <- function() {
         textInput("to", "To:")
       ),
       uiOutput("document", container = rCodeContainer)
-    ))
+    )
   )
 
   server <- function(input, output, session) {
