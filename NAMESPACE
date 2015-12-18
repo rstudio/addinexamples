@@ -3,6 +3,7 @@
 export(findAndReplaceAddin)
 export(insertInAddin)
 export(subsetAddin)
+import(formatR)
 import(rstudioapi)
 import(shiny)
 import(shinygadgets)

@@ -9,8 +9,7 @@ Depends:
 Imports:
     shiny,
     shinygadgets,
-    rstudioapi
-Suggests:
+    rstudioapi,
     formatR
 License: MIT + file LICENSE
 LazyData: true
