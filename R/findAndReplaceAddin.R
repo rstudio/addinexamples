@@ -6,11 +6,11 @@
 #' @export
 findAndReplaceAddin <- function() {
 
-  ui <- gadgetPage(
+  ui <- miniPage(
 
     includeHighlightJs(),
-    titlebar("Find and Replace"),
-    contentPanel(
+    miniTitleBar("Find and Replace"),
+    miniContentPanel(
       h4("Replace the text 'from' with the text 'to'."),
       hr(),
       stableColumnLayout(

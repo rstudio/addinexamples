@@ -6,5 +6,5 @@
 #'
 #' @name addinexamples
 #' @docType package
-#' @import shiny shinygadgets rstudioapi formatR
+#' @import shiny miniUI rstudioapi formatR
 NULL

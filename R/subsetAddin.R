@@ -25,9 +25,9 @@ subsetAddin <- function() {
   defaultData <- text
 
   # Generate UI for the gadget.
-  ui <- gadgetPage(
-    titlebar("Subset a data.frame"),
-    contentPanel(
+  ui <- miniPage(
+    miniTitleBar("Subset a data.frame"),
+    miniContentPanel(
       stableColumnLayout(
         textInput("data", "Data", value = defaultData),
         textInput("subset", "Subset Expression")

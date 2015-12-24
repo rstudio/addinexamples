@@ -8,7 +8,7 @@ Depends:
     R (>= 3.0.0)
 Imports:
     shiny,
-    shinygadgets,
+    miniUI,
     rstudioapi,
     formatR
 License: MIT + file LICENSE
