@@ -3,10 +3,10 @@ reformatAddin <- function() {
 
   formatRLink <- tags$a(href = "http://yihui.name/formatR/", "formatR")
 
-  ui <- gadgetPage(
+  ui <- miniPage(
     includeHighlightJs(),
-    titlebar("Reformat Code"),
-    contentPanel(
+    miniTitleBar("Reformat Code"),
+    miniContentPanel(
       h4("Use ", formatRLink, " to reformat code."),
       hr(),
       stableColumnLayout(
