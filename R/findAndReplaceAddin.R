@@ -9,7 +9,9 @@ findAndReplaceAddin <- function() {
   ui <- miniPage(
 
     includeHighlightJs(),
-    miniTitleBar("Find and Replace"),
+    miniTitleBar("Find and Replace",
+      left = miniTitleBarButton("cancel", "Cancel")
+    ),
     miniContentPanel(
       h4("Replace the text 'from' with the text 'to'."),
       hr(),
@@ -63,9 +65,12 @@ findAndReplaceAddin <- function() {
       spec <- reactiveRefactor()
       transformed <- paste(spec$refactored, collapse = "\n")
       rstudioapi::setDocumentContents(transformed, id = context$id)
-      invisible(stopApp())
+      stopApp()
     })
 
+    observeEvent(input$cancel, {
+      stopApp()
+    })
   }
 
   viewer <- dialogViewer("Find and Replace", width = 1000, height = 800)
