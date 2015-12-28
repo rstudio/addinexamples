@@ -26,7 +26,7 @@ subsetAddin <- function() {
 
   # Generate UI for the gadget.
   ui <- miniPage(
-    miniTitleBar("Subset a data.frame"),
+    gadgetTitleBar("Subset a data.frame"),
     miniContentPanel(
       stableColumnLayout(
         textInput("data", "Data", value = defaultData),

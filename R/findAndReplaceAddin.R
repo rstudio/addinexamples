@@ -9,7 +9,7 @@ findAndReplaceAddin <- function() {
   ui <- miniPage(
 
     includeHighlightJs(),
-    miniTitleBar("Find and Replace"),
+    gadgetTitleBar("Find and Replace"),
     miniContentPanel(
       h4("Replace the text 'from' with the text 'to'."),
       hr(),

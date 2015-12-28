@@ -5,7 +5,7 @@ reformatAddin <- function() {
 
   ui <- miniPage(
     includeHighlightJs(),
-    miniTitleBar("Reformat Code"),
+    gadgetTitleBar("Reformat Code"),
     miniContentPanel(
       h4("Use ", formatRLink, " to reformat code."),
       hr(),
