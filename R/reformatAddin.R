@@ -56,7 +56,7 @@ reformatAddin <- function() {
 
   }
 
-  viewer <- dialogViewer("Find and Replace", width = 1000, height = 800)
+  viewer <- dialogViewer("Reformat Code", width = 1000, height = 800)
   runGadget(ui, server, viewer = viewer)
 
 }
