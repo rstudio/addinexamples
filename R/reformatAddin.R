@@ -5,9 +5,7 @@ reformatAddin <- function() {
 
   ui <- miniPage(
     includeHighlightJs(),
-    miniTitleBar("Reformat Code",
-      left = miniTitleBarButton("cancel", "Cancel")
-    ),
+    miniTitleBar("Reformat Code"),
     miniContentPanel(
       h4("Use ", formatRLink, " to reformat code."),
       hr(),
@@ -53,12 +51,9 @@ reformatAddin <- function() {
     observeEvent(input$done, {
       contents <- paste(reactiveDocument(), collapse = "\n")
       rstudioapi::setDocumentContents(contents, id = context$id)
-      stopApp()
+      invisible(stopApp())
     })
 
-    observeEvent(input$cancel, {
-      stopApp()
-    })
   }
 
   viewer <- dialogViewer("Find and Replace", width = 1000, height = 800)

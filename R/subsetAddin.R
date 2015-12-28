@@ -26,9 +26,7 @@ subsetAddin <- function() {
 
   # Generate UI for the gadget.
   ui <- miniPage(
-    miniTitleBar("Subset a data.frame",
-      left = miniTitleBarButton("cancel", "Cancel")
-    ),
+    miniTitleBar("Subset a data.frame"),
     miniContentPanel(
       stableColumnLayout(
         textInput("data", "Data", value = defaultData),
@@ -98,11 +96,7 @@ subsetAddin <- function() {
         rstudioapi::insertText(text = code)
       }
 
-      stopApp()
-    })
-
-    observeEvent(input$cancel, {
-      stopApp()
+      invisible(stopApp())
     })
   }
 
