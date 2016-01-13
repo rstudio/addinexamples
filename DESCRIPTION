@@ -7,9 +7,9 @@ Description: Provides an example set of RStudio addins -- R functions that can b
 Depends:
     R (>= 3.0.0)
 Imports:
-    shiny,
+    shiny (>= 0.13),
     miniUI,
-    rstudioapi,
+    rstudioapi (>= 0.4),
     formatR
 License: MIT + file LICENSE
 LazyData: true
