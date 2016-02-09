@@ -1,5 +1,3 @@
-_NOTE: RStudio addins are not yet part of a released version of RStudio. Stay tuned!_
-
 RStudio Addins
 ==============
 
@@ -31,9 +29,9 @@ What's an Addin?
 
 Addins are just R functions with a bit of special registration metadata. This
 package exports two simple addins: one function,
-[insert_in](https://github.com/rstudio/addinexamples/blob/master/R/insert-in.R),
+[insert_in](https://github.com/rstudio/addinexamples/blob/master/R/insertInAddin.R),
 can be used to insert ' %in% ' at the cursor position. Another,
-[refactor](https://github.com/rstudio/addinexamples/blob/master/R/refactor.R),
+[refactor](https://github.com/rstudio/addinexamples/blob/master/R/findAndReplaceAddin.R),
 can be used to interactively refactor code in a document, using a Shiny application.
 These addins are registered through a Debian Control File, located at
 [inst/rstudio/addins.dcf](https://github.com/rstudio/addinexamples/blob/master/inst/rstudio/addins.dcf).
@@ -41,5 +39,5 @@ These addins are registered through a Debian Control File, located at
 When RStudio is launched, it will automatically discover addins registered by
 installed R packages, and register them so that they can be invoked through
 keyboard shortcuts and other UI gestures. See
-[this support article](https://support.rstudio.com/hc/en-us/articles/215605467)
+[the RStudio Addins website](http://rstudio.github.io/rstudioaddins/)
 for more details.
