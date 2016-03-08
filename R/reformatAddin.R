@@ -15,7 +15,7 @@ reformatAddin <- function() {
         checkboxInput("arrow", "Replace the assign operator '=' with '<-'?", TRUE),
         checkboxInput("blank", "Keep blank lines?", TRUE),
         numericInput("indent", "Indent size: ", 2),
-        numericInput("width", "Column width: ", 80)
+        numericInput("width", "Minimum line width: ", 60)
       ),
       uiOutput("document", container = rCodeContainer)
     )
