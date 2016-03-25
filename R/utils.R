@@ -27,7 +27,7 @@ highlightCode <- function(session, id) {
 }
 
 rCodeContainer <- function(...) {
-  code <- as.character(tags$code(class = "language-r", ...))
+  code <- HTML(as.character(tags$code(class = "language-r", ...)))
   div(pre(code))
 }
 
